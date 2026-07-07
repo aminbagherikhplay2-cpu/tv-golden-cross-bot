@@ -23,7 +23,6 @@ def get_symbols():
     symbols = []
 
     for symbol in markets:
-
         market = markets[symbol]
 
         if (
@@ -34,7 +33,9 @@ def get_symbols():
             symbols.append(symbol)
 
     return symbols
-  def get_dataframe(symbol):
+
+
+def get_dataframe(symbol):
 
     ohlcv = exchange.fetch_ohlcv(
         symbol,
@@ -75,9 +76,10 @@ for symbol in get_symbols():
         print(symbol)
 
     except Exception as e:
-
         print(symbol, e)
-      message1 = "📈 <b>Golden Cross امروز</b>\n\n"
+
+
+message1 = "📈 <b>Golden Cross امروز</b>\n\n"
 
 if len(golden) == 0:
     message1 += "❌ هیچ Golden Cross جدیدی پیدا نشد."
@@ -86,7 +88,6 @@ else:
         message1 += f"✅ {s}\n"
 
 send_message(message1)
-
 
 message2 = "⭐ <b>سیگنال‌های منتخب</b>\n\n"
 
