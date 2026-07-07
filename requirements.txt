@@ -1,3 +1,2 @@
-ccxt==4.4.93
 pandas==2.2.2
 requests==2.32.3
