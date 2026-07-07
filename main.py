@@ -9,7 +9,7 @@ from indicators import (
 
 from telegram import send_message
 
-exchange = ccxt.bybit({
+exchange = ccxt.kraken({
     "enableRateLimit": True,
 })
 
