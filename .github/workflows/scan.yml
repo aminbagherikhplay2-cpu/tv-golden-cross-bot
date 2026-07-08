@@ -1,8 +1,8 @@
-name: Daily Golden Cross Scan
+name: Golden Cross Scan (Every 8 Hours)
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 */8 * * *'
   workflow_dispatch:
 
 jobs:
