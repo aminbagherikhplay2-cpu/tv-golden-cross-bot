@@ -8,6 +8,7 @@ from indicators import (
 )
 
 from telegram import send_message
+send_message("🤖 ربات شروع به اجرا کرد...")
 
 exchange = ccxt.kraken({
     "enableRateLimit": True,
@@ -98,3 +99,4 @@ else:
         message2 += f"🚀 {s}\n"
 
 send_message(message2)
+send_message("✅ ربات با موفقیت اجرا شد.")
