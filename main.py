@@ -80,7 +80,8 @@ for symbol in get_symbols():
         print(symbol, e)
 
 
-message1 = "📈 <b>Golden Cross امروز</b>\n\n"
+message1 = f"🔍 تعداد ارزهای اسکن شده: {len(get_symbols())}\n\n"
+message1 += "📈 <b>Golden Cross امروز</b>\n\n"
 
 if len(golden) == 0:
     message1 += "❌ هیچ Golden Cross جدیدی پیدا نشد."
