@@ -32,7 +32,7 @@ def get_symbols():
             and market["quote"] == "USDT"
         ):
             symbols.append(symbol)
-print(symbols)
+ print(symbols)
  return symbols
 
 
