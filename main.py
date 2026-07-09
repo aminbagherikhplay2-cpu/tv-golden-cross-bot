@@ -32,8 +32,10 @@ def get_symbols():
             and market["quote"] == "USDT"
         ):
             symbols.append(symbol)
- print(symbols)
- return symbols
+
+    send_message(f"📋 لیست ارزها:\n\n{symbols}")
+
+    return symbols
 
 
 def get_dataframe(symbol):
