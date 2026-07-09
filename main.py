@@ -32,8 +32,8 @@ def get_symbols():
             and market["quote"] == "USDT"
         ):
             symbols.append(symbol)
-
-    return symbols
+print(symbols)
+ return symbols
 
 
 def get_dataframe(symbol):
