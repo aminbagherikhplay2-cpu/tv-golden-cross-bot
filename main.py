@@ -58,6 +58,7 @@ def get_all_symbols():
             ex = getattr(ccxt, name)({
                 "enableRateLimit": True,
             })
+            exchange_cache[name] = ex
 
             markets = ex.load_markets()
 
@@ -87,6 +88,9 @@ def get_all_symbols():
 
     return symbols
 
+all_symbols = get_all_symbols()
+exchange_cache = {}
+
 golden = []
 strong = []
 
@@ -112,6 +116,8 @@ def get_symbols():
 
 
 def get_dataframe(symbol):
+
+    exchange = exchange_cache[all_symbols[symbol]]
 
     ohlcv = exchange.fetch_ohlcv(
         symbol,
