@@ -142,7 +142,6 @@ def get_dataframe(symbol):
 
     return add_indicators(df)
     
-all_symbols = get_all_symbols()
 
 
 for symbol in all_symbols:
