@@ -88,8 +88,8 @@ def get_all_symbols():
 
     return symbols
 
-all_symbols = get_all_symbols()
 exchange_cache = {}
+all_symbols = get_all_symbols()
 
 golden = []
 strong = []
