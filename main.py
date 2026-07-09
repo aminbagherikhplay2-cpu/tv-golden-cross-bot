@@ -168,9 +168,12 @@ message1 += "📈 <b>Golden Cross امروز</b>\n\n"
 if len(golden) == 0:
     message1 += "❌ هیچ Golden Cross جدیدی پیدا نشد."
 else:
+    if len(golden) == 0:
+    message1 += "❌ هیچ Golden Cross جدیدی پیدا نشد."
+else:
     for s in sorted(golden):
-    exchange_name = all_symbols[s]
-    message1 += f"✅ {s} ({exchange_name.upper()})\n"
+        exchange_name = all_symbols[s]
+        message1 += f"✅ {s} ({exchange_name.upper()})\n"
 
 send_message(message1)
 
