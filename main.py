@@ -23,6 +23,30 @@ EXCHANGES = [
     "kraken",
 ]
 
+def connect_exchange():
+
+    for name in EXCHANGES:
+
+        try:
+
+            exchange = getattr(ccxt, name)({
+                "enableRateLimit": True,
+            })
+
+            exchange.load_markets()
+
+            send_message(f"✅ اتصال به {name} برقرار شد.")
+
+            return exchange
+
+        except Exception:
+
+            continue
+
+    raise Exception("No exchange available")
+
+exchange = connect_exchange()
+
 golden = []
 strong = []
 
