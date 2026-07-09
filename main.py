@@ -10,9 +10,18 @@ from indicators import (
 from telegram import send_message
 send_message("🤖 ربات شروع به اجرا کرد...")
 
-exchange = ccxt.kraken({
-    "enableRateLimit": True,
-})
+EXCHANGES = [
+    "binance",
+    "okx",
+    "kucoin",
+    "mexc",
+    "gate",
+    "bitget",
+    "htx",
+    "bingx",
+    "bitmart",
+    "kraken",
+]
 
 golden = []
 strong = []
