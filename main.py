@@ -122,7 +122,7 @@ def get_dataframe(symbol):
     ohlcv = exchange.fetch_ohlcv(
         symbol,
         timeframe="1d",
-        limit=1000,
+        limit=250,
     )
 
     df = pd.DataFrame(
