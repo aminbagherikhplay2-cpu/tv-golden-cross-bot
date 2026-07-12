@@ -168,7 +168,6 @@ message1 += "📈 <b>Golden Cross امروز</b>\n\n"
 if len(golden) == 0:
     message1 += "❌ هیچ Golden Cross جدیدی پیدا نشد."
 else:
-    
     for s in sorted(golden):
         exchange_name = all_symbols[s]
         df = get_dataframe(s)
@@ -176,15 +175,22 @@ else:
         prev = df.iloc[-2]
         last = df.iloc[-1]
 
+        last_time = pd.to_datetime(last["time"], unit="ms")
+
         prev_diff = prev["EMA50"] - prev["EMA200"]
         last_diff = last["EMA50"] - last["EMA200"]
 
+        last5 = df["close"].tail(5).tolist()
+
         message1 += (
             f"✅ {s} ({exchange_name.upper()})\n"
+            f"آخرین کندل: {last_time}\n"
             f"Close: {prev['close']:.8f} → {last['close']:.8f}\n"
             f"EMA50: {prev['EMA50']:.8f} → {last['EMA50']:.8f}\n"
             f"EMA200: {prev['EMA200']:.8f} → {last['EMA200']:.8f}\n"
-            f"ΔEMA: {prev_diff:.8f} → {last_diff:.8f}\n\n"
+            f"ΔEMA: {prev_diff:.8f} → {last_diff:.8f}\n"
+            f"آخرین ۵ Close:\n"
+            f"{last5}\n\n"
         )
 
 send_message(message1)
